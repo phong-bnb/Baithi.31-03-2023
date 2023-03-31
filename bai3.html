@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,27 @@
     <title>Viết hàm sumOfListFibonacy() nhận vào một số nguyên x , hàm trả về giá trị là tổng các số
         fibonacy từ 0 cho tới x.</title>
 </head>
+
 <body>
     <script>
-        alert
+        function sumOfListFibonacci(x) {
+            if (x < 0) {
+                return 0;
+            }
+            let sum = 0;
+            let so1 = 0;
+            let so2 = 1;
+            for (let i = 0; i <= x; i++) {
+                sum += so1;
+                let temp = so2;
+                so2 = so1 + so2;
+                so1 = temp;
+            }
+            return sum;
+        }
+        let X = +prompt("Nhập số bất kì: ")
+        alert("Tổng của dãy fibonacci là: " + sumOfListFibonacci(X))
     </script>
 </body>
+
 </html>
